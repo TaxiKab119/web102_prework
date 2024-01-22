@@ -41,10 +41,17 @@ function addGamesToPage(games) {
             <h1>${game['name']}</h1>
             <p>${game['description']}</p>
             <p>Backers: ${game['backers']}</p>
+            <div class="progressBarContainer">
+                <div class="progressBar" id="${game['name']}-progress"></div>
+            </div>
         `;
         // append the game to the games-container
         gameCard.innerHTML = innerHTML;
         document.getElementById('games-container').appendChild(gameCard);
+        
+        // add funding amount to progress bar
+        const fundingProgress = Math.round(parseInt(game['pledged']) / parseInt(game['goal']) * 100);
+        document.getElementById(`${game['name']}-progress`).style.width = fundingProgress >= 100 ? '100%' : `${fundingProgress.toString()}%`;
     }
 }
 

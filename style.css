@@ -9,6 +9,13 @@ body {
     width: 50px;
 }
 
+#games-link {
+    text-decoration: none;
+    color: white;
+    padding-left: 4%;
+    font-size: larger;
+}
+
 .header {
     display: flex;
     background-color: lightblue;
@@ -78,4 +85,17 @@ button {
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+}
+
+.progressBarContainer {
+    width: 100%; 
+    background-color: #ddd;
+    position: relative;
+    border-radius: 5px;
+}
+
+.progressBar {
+    height: 30px; 
+    background-color: #4CAF50;
+    border-radius: 5px;
 }
